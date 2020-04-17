@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:import url="/WEB-INF/views/layouts/app.jsp">
+<c:import url="../layouts/app.jsp">
     <c:param name="content">
         <c:if test="${flush != null}">
             <div id="flush_success">
@@ -30,6 +30,7 @@
         </table>
 
         <div id="pagenation">
+                                （全 ${reports_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((reports_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
